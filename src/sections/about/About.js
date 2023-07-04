@@ -2,8 +2,10 @@ import React from 'react'
 import {HiDownload} from 'react-icons/hi'
 import './About.css'
 
+
 // assets
 import profilePic from '../../assets/about.jpg'
+import CV from '../../assets/JeremiahWangaruroResume.pdf'
 
 function About() {
   return (
