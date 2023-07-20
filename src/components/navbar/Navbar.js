@@ -22,7 +22,11 @@ export default function Navbar() {
         </a>
         <ul className='nav__menu'>
           {
-            data.map(item => <li key={item.id}><a href={item.link}>{item.title}</a></li>)
+            data.map(item => <li key={item.id}>
+              <a href={item.link}>
+                {item.title}
+              </a>
+            </li>)
           }
         </ul>
         <button id='theme__icon' ><IoIosColorPalette/></button>
