@@ -1,8 +1,15 @@
-import React from 'react'
 import './Footer.css'
+import { RiArrowUpSFill } from 'react-icons/ri'
 
 export default function Footer() {
   return (
-    <div>Footer</div>
+    <footer>
+    <div className="container footer__container">
+      <a href='#'>
+        <RiArrowUpSFill/>  
+        Back to Top
+      </a>
+    </div>
+  </footer>
   )
 }
