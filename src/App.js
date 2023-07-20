@@ -4,12 +4,13 @@ import Header from './sections/header/Header';
 import Portfolio from './sections/portfolio/Portfolio';
 import Contact from './sections/contact/Contact';
 import Footer from './sections/footer/Footer';
+import About from './sections/about/About'
 
 function App() {
   return (
     <main>
       <Navbar/>
-      <Header/>
+      <About/>
       <Portfolio/>
       <Contact/>
       <Footer/>
