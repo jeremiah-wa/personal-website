@@ -80,7 +80,6 @@ main {
 
 
 
-
 /* GENERAL CONTAINER CLASS */
 .container {
   width: var(--container-width-lg);
@@ -171,7 +170,7 @@ img {
 .btn:hover {
   background-color: transparent;
   border-color: var(--color-light);
-  transform: translateY(-0.5rem);
+  transform: translateY(-0.25rem);
 }
 
 .btn.white {
@@ -185,7 +184,7 @@ img {
 
 .btn.primary {
   background: var(--color-primary);
-  /* text color always white that's why i didn't use a variable color */
+  /* text color should remain white even with dark mode theme*/
   color: white;
 }
 
