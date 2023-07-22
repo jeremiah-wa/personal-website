@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export function useRepos() {
+export default function useRepos() {
     const [repos, setRepos] = useState([])
     const [error, setError] = useState(null)
 
