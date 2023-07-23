@@ -19,7 +19,7 @@ export default function useRepos() {
                     description: repo.description,
                     link: repo.html_url,
                     topics: repo.topics, 
-                    language: repo.language
+                    category: repo.language
                 })
             )
         )
