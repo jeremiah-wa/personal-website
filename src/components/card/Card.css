@@ -1,7 +1,8 @@
 .card {
-    height: 25rem;
+    height: fit-content;
+    width: fit-content;
     background: var(--color-white);
-    padding: 1.5rem;
+    padding: 1rem;
     border: 2px solid transparent;
     border-radius: var(--border-radius-1);
     transition: var(--transition);
