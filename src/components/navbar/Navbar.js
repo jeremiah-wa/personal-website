@@ -3,16 +3,8 @@ import './Navbar.css'
 import {IoIosColorPalette} from 'react-icons/io'
 import Logo from '../../assets/logo.jpg'
 
-const data = [
-  {id: 1, link: '#', title: 'Home'},
-  {id: 2, link: '#about', title: 'About'},
-  {id: 3, link: '#services', title: 'Services'},
-  {id: 4, link: '#portfolio', title: 'Portfolio'},
-  {id: 5, link: '#contact', title: 'Contact'}
-]
 
-
-export default function Navbar() {
+export default function Navbar({links}) {
   return (
     <nav>
       <div className="container nav__container">
@@ -22,7 +14,7 @@ export default function Navbar() {
         </a>
         <ul className='nav__menu'>
           {
-            data.map(item => <li key={item.id}>
+            links.map(item => <li key={item.id}>
               <a href={item.link}>
                 {item.title}
               </a>

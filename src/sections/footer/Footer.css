@@ -12,3 +12,11 @@ footer {
 .footer__container a {
     color: white;
 }
+
+
+/* HIDE NAV MENU ON TABLETS AND PHONES */
+@media screen and (max-width: 1024px) {
+    .footer__container {
+        display: none;
+    }
+}

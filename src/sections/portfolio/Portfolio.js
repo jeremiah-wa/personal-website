@@ -17,9 +17,9 @@ const Item = ({item}) => {
           </p>
         }
         {item.topics &&
-          <div className='topic__wrapper'>
-            {item.topics.slice(0, 3).map(topic => <div className='topic'>{topic}</div>)}
-          </div>
+          <ul className='topic__wrapper'>
+            {item.topics.slice(0, 3).map((topic, index) => <li key={index} className='topic'>{topic}</li>)}
+          </ul>
         }
 
     </Card>
@@ -35,7 +35,7 @@ export default function Portfolio() {
       <p>
       Check out some of the projects I recently worked on for my clients. Use the buttons to toggle the different categories.
       </p>
-      <Carousel data={repos} Item={Item}/>
+      <Carousel data={repos} withCategories={false} Item={Item}/>
     </section>
   )
 }

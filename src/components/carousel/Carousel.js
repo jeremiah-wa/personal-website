@@ -22,7 +22,7 @@ const defaultItem = ({item}) => {
 }
 
 
-const Carousel = ({data, Item=defaultItem}) => {
+const Carousel = ({data, withCategories=true,  Item=defaultItem}) => {
   const [items, setItems] = useState(data);
 
   let categories = data.map(item => item.category)
@@ -46,7 +46,7 @@ const Carousel = ({data, Item=defaultItem}) => {
   return (
     <>
       <div className="container carousel__container">
-        {uniqueCategories && <Categories categories={uniqueCategories} onFilterItems={filterItemsHandler}/> }
+        {uniqueCategories && withCategories && <Categories categories={uniqueCategories} onFilterItems={filterItemsHandler}/> }
         
         <Swiper
           slidesPerView={1}
@@ -65,7 +65,7 @@ const Carousel = ({data, Item=defaultItem}) => {
           {
             items.map(item => (
               <SwiperSlide key={item.id}>
-                <Item key={item.id} item={item} />
+                <Item item={item} />
               </SwiperSlide>
             ))
           }
