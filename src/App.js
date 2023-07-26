@@ -8,9 +8,13 @@ import Contact from './sections/contact/Contact';
 import Footer from './sections/footer/Footer';
 import About from './sections/about/About'
 import {useState,  useEffect, useRef } from 'react';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
-import { BsPersonFill } from 'react-icons/bs';
+import { BsInstagram, BsPersonFill } from 'react-icons/bs';
 import {AiFillAppstore, AiFillMessage} from 'react-icons/ai'
+import { RiMusic2Fill } from 'react-icons/ri';
+import { FaLinkedin } from 'react-icons/fa';
+import Music from './sections/music/Music';
 
 
 const Professional = ({showFloatingNav}) => {
@@ -27,7 +31,29 @@ const Professional = ({showFloatingNav}) => {
       <Portfolio/>
       <Contact/>
       {showFloatingNav && <FloatingNav links={links}/>}
-      <Footer/>
+    </>
+  )
+}
+
+const Personal = ({showFloatingNav}) => {
+  const links = [
+    {id: 1, link: '#music', title: 'Music', icon: <RiMusic2Fill/>},
+    {id: 2, link: '#entertainment', title: 'Entertainment', icon: <AiFillAppstore/>},
+    {id: 3, link: '#contact', title: 'Contact', icon: <AiFillMessage/>}
+  ]
+
+  const contacts = [
+    {id: 1, icon: <BsInstagram/>, link: 'https://www.instagram.com/jeremiah_ruro/'},
+    {id: 2, icon: <FaLinkedin/>, link: 'https://www.linkedin.com/in/jeremiahwangaruro'}
+  ]
+
+  return (
+    <>
+      <Navbar links={links}/>
+      <Music/>
+      <Entertainment/>
+      <Contact contacts={contacts}/>
+      {showFloatingNav && <FloatingNav links={links}/>}
     </>
   )
 }
@@ -66,10 +92,16 @@ function App() {
     return () => clearInterval(checkYPosition);
   }, [siteYPostion])
 
-
   return (
     <main>
-      <Professional showFloatingNav/>
+     <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Professional showFloatingNav/>}/>
+          <Route path="/personal" element = {<Personal showFloatingNav/>}/>
+          <Route path="*" element = {<Navigate to="/"/>}/>
+        </Routes>
+      </BrowserRouter>
+      <Footer/>
     </main>
   );
 }
