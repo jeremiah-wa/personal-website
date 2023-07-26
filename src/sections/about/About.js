@@ -12,7 +12,7 @@ import CV from '../../assets/JeremiahWangaruroResume.pdf'
 // icons
 import {HiDownload} from 'react-icons/hi'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
-
+import { Link } from 'react-router-dom'
 
 
 const socials = [
@@ -31,12 +31,14 @@ function About() {
             <div className="container about__container">
                 <div className="about__left">
                     <div className="about__portrait">
+                        <Link to="/personal">
                         <img src={ProfilePic} alt="About Image" />
+                        </Link>
                     </div>
                 </div>
                 <div className="about__right">
                     <div className='about__header'>
-                        <h2>About Me</h2>
+                        <h2><Link to="/personal">About Me</Link></h2>
                     </div>
                     <div className="about__socials">
                     {
