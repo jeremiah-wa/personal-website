@@ -1,16 +1,24 @@
 import './Contact.css'
+import AOS from 'aos'
+import { useEffect } from 'react'
 
 // icons
 import {HiOutlineMail} from 'react-icons/hi'
 import {FaLinkedin} from 'react-icons/fa'
 
 
-const contacts = [
+
+const defaultContacts = [
   {id: 1, icon: <HiOutlineMail/>, link: 'mailto:jeremiah.ruro@gmail.com'},
   {id: 2, icon: <FaLinkedin/>, link: 'https://www.linkedin.com/in/jeremiahwangaruro'}
 ]
 
-function Contact() {
+
+function Contact({contacts=defaultContacts}) {
+  useEffect(() => {
+    AOS.init({duration: 2000})
+  }, [])
+  
   return (
     <section id="contact">
       <h2>Get In Touch</h2>
