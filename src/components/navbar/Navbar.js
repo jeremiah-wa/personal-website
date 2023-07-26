@@ -1,5 +1,5 @@
-import React from 'react'
 import './Navbar.css'
+import { Link } from 'react-router-dom'
 import {IoIosColorPalette} from 'react-icons/io'
 import Logo from '../../assets/logo.jpg'
 
@@ -8,10 +8,11 @@ export default function Navbar({links}) {
   return (
     <nav>
       <div className="container nav__container">
-        <a href="index.html" className='nav__header'>
+      <Link to="/" className='nav__header'>
+        
           <img src={Logo} alt="Logo"  className='nav__logo'/>
           <h3>Jeremiah Wangaruro</h3>
-        </a>
+        </Link>
         <ul className='nav__menu'>
           {
             links.map(item => <li key={item.id}>
