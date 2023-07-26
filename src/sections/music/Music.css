@@ -1,0 +1,10 @@
+#music {
+    padding: 4.4rem 0 0;
+    background: var(--color-light);
+}
+
+.SpotifyPlayer{
+    width: 100%;
+    height: 44rem;
+    border-top-left-radius: 0;
+}
