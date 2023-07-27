@@ -1,5 +1,4 @@
 #portfolio .card {
-    height: 12rem;
     min-width: 18rem;
 }
 
@@ -18,7 +17,8 @@
 
 .topic__wrapper{
     display: flex;
-    column-gap: 10px;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .topic {
@@ -26,6 +26,8 @@
     padding: 0 10px;
     border-radius: 10px;
     color: var(--color-primary);
+    max-width: min-content;
+    text-wrap: nowrap;
 }
 
 #portfolio .swiper-button-prev, 

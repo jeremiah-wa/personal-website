@@ -20,9 +20,9 @@ const Categories = ({categories, onFilterItems}) => {
         {
             categories.map(category => (
                 ((category) ? 
-                  <CategoryButton key={category} category={category} onChangeCategory={() => changeCategoryHandler(category)} className={`btn cat__btn ${activeCategory == category ? 'primary' : 'white'}`}/>
+                  <CategoryButton key={category} category={category} onChangeCategory={() => changeCategoryHandler(category)} className={`btn cat__btn ${activeCategory === category ? 'primary' : 'white'}`}/>
                 :
-                  <CategoryButton key={'other'} category={'other'} onChangeCategory={() => changeCategoryHandler(undefined)} className={`btn cat__btn ${activeCategory == 'other' ? 'primary' : 'white'}`}/>
+                  <CategoryButton key={'other'} category={'other'} onChangeCategory={() => changeCategoryHandler(undefined)} className={`btn cat__btn ${activeCategory === 'other' ? 'primary' : 'white'}`}/>
                 )
             ))
         }

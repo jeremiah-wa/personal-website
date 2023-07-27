@@ -1,7 +1,6 @@
 import './App.css';
 import Navbar from './components/navbar/Navbar';
 import FloatingNav from './components/floatingNav/FloatingNav';
-import Header from './sections/header/Header';
 import Portfolio from './sections/portfolio/Portfolio';
 import Entertainment from './sections/entertainment/Entertainment'
 import Contact from './sections/contact/Contact';
