@@ -33,7 +33,7 @@ export default function Portfolio() {
     <section id="portfolio">
       <h2>Recent Projects</h2>
       <p>
-      Check out some of the projects I recently worked on.
+      Check out some of my personal projects.
       </p>
       <Carousel data={repos} withCategories={false} Item={Item}/>
     </section>

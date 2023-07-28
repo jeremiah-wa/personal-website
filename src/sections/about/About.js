@@ -46,7 +46,7 @@ function About() {
                         }
                     </div>
                     <p>
-                    Hi, my name is Jeremiah Wangaruro from Dundalk, Ireland. I'm a Data Scientist with a Bachelors degree in Computer Science and 3 years experience in industry. Specifically, experience in using Python for predictive modelling and machine learning. And SQL, SSAS and Power BI for data modelling and report building.Check out my resume below for more info!
+                    Hi, my name is Jeremiah Wangaruro from Dundalk, Ireland. I'm a Data Scientist with a Bachelors degree in Computer Science and 3 years experience in industry. Specifically, experience in using Python for predictive modelling and machine learning and SQL, SSAS and Power BI for data modelling and report building. Check out my resume below for more info!
                     </p>
                     <div className="about__cta"  data-aos="fade-up">
                         <a href="#contact" className='btn primary'>Let's Talk</a>

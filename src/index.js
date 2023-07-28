@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// import './theme/ThemeColors.css'
+import './theme/ThemeColors.css'
 import App from './App';
 import { ModalProvider } from './context/ModalContext';
 import { ThemeProvider } from './context/ThemeContext'
@@ -10,13 +10,11 @@ import { ThemeProvider } from './context/ThemeContext'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <ThemeProvider>
     <ModalProvider>
       <App />
     </ModalProvider>
     </ThemeProvider>
-  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
