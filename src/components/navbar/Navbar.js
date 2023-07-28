@@ -2,9 +2,12 @@ import './Navbar.css'
 import { Link } from 'react-router-dom'
 import {IoIosColorPalette} from 'react-icons/io'
 import Logo from '../../assets/logo.jpg'
+import { useModalContext } from '../../context/ModalContext';
 
 
 export default function Navbar({links}) {
+  const {showModalHandler} = useModalContext();
+  
   return (
     <nav>
       <div className="container nav__container">
@@ -22,7 +25,7 @@ export default function Navbar({links}) {
             </li>)
           }
         </ul>
-        <button id='theme__icon' ><IoIosColorPalette/></button>
+        <button id='theme__icon' onClick={showModalHandler}><IoIosColorPalette/></button>
       </div>
     </nav>
   )
