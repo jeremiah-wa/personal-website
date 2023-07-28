@@ -6,6 +6,7 @@ import Entertainment from './sections/entertainment/Entertainment'
 import Contact from './sections/contact/Contact';
 import Footer from './sections/footer/Footer';
 import About from './sections/about/About'
+import { useThemeContext } from './context/ThemeContext'
 import {useState,  useEffect, useRef } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
@@ -14,6 +15,7 @@ import {AiFillAppstore, AiFillMessage} from 'react-icons/ai'
 import { RiMusic2Fill } from 'react-icons/ri';
 import { FaLinkedin } from 'react-icons/fa';
 import Music from './sections/music/Music';
+import Theme from './theme/Theme';
 
 
 const Professional = ({showFloatingNav}) => {
@@ -59,6 +61,7 @@ const Personal = ({showFloatingNav}) => {
 
 
 function App() {
+  const {themeState} = useThemeContext();
 
   const mainRef = useRef();
   const [showFloatingNav, setShowFloatingNav] = useState(true);
@@ -92,7 +95,7 @@ function App() {
   }, [siteYPostion])
 
   return (
-    <main>
+    <main className={`${themeState.primary} ${themeState.background}`} ref={mainRef}>
      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Professional showFloatingNav/>}/>
@@ -101,6 +104,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       <Footer/>
+      <Theme/>
     </main>
   );
 }
