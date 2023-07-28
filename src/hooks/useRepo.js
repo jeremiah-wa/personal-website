@@ -23,7 +23,7 @@ export function useRepo(id) {
             })
         })
         .then(res => setRepo(res))
-        .catch(err => setError(error))
+        .catch(err => setError(err))
     }, [id])
 
     return {repo, error}

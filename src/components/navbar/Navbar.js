@@ -1,31 +1,31 @@
-import React from 'react'
 import './Navbar.css'
+import { Link } from 'react-router-dom'
 import {IoIosColorPalette} from 'react-icons/io'
 import Logo from '../../assets/logo.jpg'
-
-const data = [
-  {id: 1, link: '#', title: 'Home'},
-  {id: 2, link: '#about', title: 'About'},
-  {id: 3, link: '#services', title: 'Services'},
-  {id: 4, link: '#portfolio', title: 'Portfolio'},
-  {id: 5, link: '#contact', title: 'Contact'}
-]
+import { useModalContext } from '../../context/ModalContext';
 
 
-export default function Navbar() {
+export default function Navbar({links}) {
+  const {showModalHandler} = useModalContext();
+  
   return (
     <nav>
       <div className="container nav__container">
-        <a href="index.html" className='nav__header'>
+      <Link to="/" className='nav__header'>
+        
           <img src={Logo} alt="Logo"  className='nav__logo'/>
           <h3>Jeremiah Wangaruro</h3>
-        </a>
+        </Link>
         <ul className='nav__menu'>
           {
-            data.map(item => <li key={item.id}><a href={item.link}>{item.title}</a></li>)
+            links.map(item => <li key={item.id}>
+              <a href={item.link}>
+                {item.title}
+              </a>
+            </li>)
           }
         </ul>
-        <button id='theme__icon' ><IoIosColorPalette/></button>
+        <button id='theme__icon' onClick={showModalHandler}><IoIosColorPalette/></button>
       </div>
     </nav>
   )

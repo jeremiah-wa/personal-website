@@ -1,0 +1,39 @@
+
+#entertainment .card {
+    height: 30rem;
+    max-width: 22rem;
+}
+
+.poster {
+    height: 15rem;
+    width: 100%;
+}
+
+.title {
+    width: 100%;
+    white-space: nowrap;
+    display:inline-block;
+    text-overflow: ellipsis;
+    overflow:hidden;
+}
+
+.description {
+    display: block;
+    height: 5rem;
+    width: 100%;
+}
+
+.rating {
+    display: flex;
+    align-items: baseline;
+}
+
+#entertainment .card span h4 {
+    color: grey;
+}
+
+.starImage{
+    height: 1.7rem;
+    width: 1.7rem;
+    padding-top: 5px;
+}

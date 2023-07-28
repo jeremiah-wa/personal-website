@@ -1,0 +1,61 @@
+.swiper {
+    height: fit-content;
+    padding: 2rem 0 4rem;
+    overflow-y: visible;
+    position: relative;
+}
+
+.swiper-pagination-bullet {
+    background: var(--color-primary);
+    width: 0.8rem;
+    height: 0.8rem;
+    bottom: 0px;
+}
+
+.swiper-button-prev,
+.swiper-button-next{
+    color: var(--color-primary);
+    visibility: visible;
+}
+
+.swiper-button-prev {
+    left: -1px;
+    top: 15rem;
+}
+
+.swiper-button-next {
+    right: -1px;
+    top: 15rem;
+}
+
+
+
+/* MEDIA QUERIES (tablets) */
+@media screen and (max-width: 1024px) {
+    .carousel__items {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    .swiper-button-prev,
+    .swiper-button-next{
+        visibility: hidden;
+    }
+
+}
+
+
+/* MEDIA QUERIES (phones) */
+@media screen and (max-width: 600px) {
+    .carousel__categories {
+        gap: 0.6rem;
+    }
+
+    .btn.cat__btn {
+        padding: 0.7rem 0.8rem;
+    }
+
+    .carousel__items {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}

@@ -1,34 +1,61 @@
-import React from 'react'
-import {HiDownload} from 'react-icons/hi'
-import './About.css'
+import { useEffect } from 'react'
 
+// css
+import './About.css'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 // assets
-import profilePic from '../../assets/about.jpg'
+import ProfilePic from '../../assets/profile-pic.jpg'
 import CV from '../../assets/JeremiahWangaruroResume.pdf'
 
+// icons
+import {HiDownload} from 'react-icons/hi'
+import { BsGithub, BsLinkedin } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
+
+
+const socials = [
+    {id: 1, link: 'https://github.com/jeremiah-wa', icon: <BsGithub/>},
+    {id: 2, link: 'https://www.linkedin.com/in/jeremiahwangaruro', icon: <BsLinkedin/>}
+]
+
 function About() {
-  return (
-    <section id="about" data-aos="fade-in">
-        <div className="container about__container">
-            <div className="about__left">
-                <div className="about__portrait">
-                    <img src={profilePic} alt="Profile Picture" />
+  
+    useEffect(() => {
+        AOS.init({duration: 2000})
+    }, [])
+
+    return (
+        <section id="about" data-aos="fade-in">
+            <div className="container about__container">
+                <div className="about__left">
+                    <div className="about__portrait">
+                        <Link to="/personal">
+                        <img src={ProfilePic} alt="About Image" />
+                        </Link>
+                    </div>
+                </div>
+                <div className="about__right">
+                    <div className='about__header'>
+                        <h2><Link to="/personal">About Me</Link></h2>
+                    </div>
+                    <div className="about__socials">
+                    {
+                            socials.map(item => <a key={item.id} href={item.link} target="_blank" rel="noopener noreferrer">{item.icon}</a>)
+                        }
+                    </div>
+                    <p>
+                    Hi, my name is Jeremiah Wangaruro from Dundalk, Ireland. I'm a Data Scientist with a Bachelors degree in Computer Science and 3 years experience in industry. Specifically, experience in using Python for predictive modelling and machine learning and SQL, SSAS and Power BI for data modelling and report building. Check out my resume below for more info!
+                    </p>
+                    <div className="about__cta"  data-aos="fade-up">
+                        <a href="#contact" className='btn primary'>Let's Talk</a>
+                        <a href={CV} download='Jeremiah_Wangaruro_CV' className='btn primary'>Download CV <HiDownload/></a>
+                    </div>
                 </div>
             </div>
-            <div className="about__right">
-                <h2>About Me</h2>
-                <p>
-                Building projects my clients love have always been my passion. Being in the web development industry for over 3 years and serving more than 70 happy clients worldwide, I'm always motivated to do more!
-                </p>
-                <p>
-                Hi, my name is Hajia Bintu from Accra, Ghana. I'm a full-stack web developer with a Bachelors degree in Computer Science. My top priority is to get your business online the right way, giving you industry-standard design and all the functionality you need to operate smoothly online. Get in touch today with the details of your project let's get started! Check out my resume below!
-                </p>
-                <a href={CV} download className='btn primary'>Download CV <HiDownload/></a>
-            </div>
-        </div>
-    </section>
-  )
+        </section>
+    )
 }
 
 export default About
